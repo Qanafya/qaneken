@@ -1,0 +1,65 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Website</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'myapp/css/style7.css' %}">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+    <div class="main">
+        <div class="navbar">
+            <div class="iconl">
+                <h2 class="logo">Qanafya</h2>
+            </div>
+            <div class="menu">
+                <ul>
+                    <li><a href="http://127.0.0.1:8000/">HOME</a></li>
+                    <li><a href="http://127.0.0.1:8000/register">Register</a></li>
+                    <li><a href="http://127.0.0.1:8000/service">SERVICE</a></li>
+                    <li><a href="http://127.0.0.1:8000/add/">ADD</a></li>
+                    <li><a href="http://127.0.0.1:8000/contact/">CONTACT</a></li>
+                    <li><a href="http://127.0.0.1:8000/users/">USERS</a></li>
+                </ul>
+            </div>
+
+        </div>
+        <div class="back">
+            <a href="http://127.0.0.1:8000/service"><div class="ba"><img src="https://cdn-icons-png.flaticon.com/512/2223/2223615.png" alt=""></div></a>
+            <h1>Users</h1>
+            <div class="el">
+                <div class="tanba">
+                    <table class="table">
+                <tbody>
+                    <tr class="active">
+                    <td class="bold"><b>Login</b></td>
+                    <td class="bold"><b>Name</b></td>
+                    <td class="bold"><b>Surname</b></td>
+                    <td class="bold"><b>Age</b></td>
+                    <td class="bold"><b>Country</b></td>
+                    <td class="bold"><b>Password</b></td>
+                  </tr>
+                    {% for q in users %}
+                  <tr class="danger">
+                    <td>{{ q.login }}</td>
+                    <td>{{ q.name }}</td>
+                    <td>{{ q.surname }}</td>
+                    <td>{{ q.age }}</td>
+                    <td>{{ q.country }}</td>
+                    <td>{{ q.password }}</td>
+                  </tr>
+                    {% endfor %}
+                </tbody>
+              </table>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+
+
+</body>
+</html>
